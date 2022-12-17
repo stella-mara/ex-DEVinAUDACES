@@ -1,3 +1,5 @@
+'use strict';
+
 var numero = parseInt(prompt('Informe o número'))
 
 if(isNaN(numero)){

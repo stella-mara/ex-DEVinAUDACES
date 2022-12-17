@@ -1,3 +1,5 @@
+'use strict';
+
 var soma = 0
 do {
   var numero = (prompt('Digite um número'));

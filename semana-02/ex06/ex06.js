@@ -1,3 +1,5 @@
+'use strict';
+
 var operacao = prompt('Operação (+,-,*,/)');
 var num1 = parseFloat(prompt('Num 1'));
 var num2 = parseFloat(prompt('Num 2'));
