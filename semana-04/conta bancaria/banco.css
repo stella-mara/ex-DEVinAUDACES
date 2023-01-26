@@ -15,7 +15,7 @@ header {
 }
 
 header img {
-  height: 80px;
+  height: 100px;
 }
 
 header nav {
@@ -34,6 +34,9 @@ header nav ul li {
 }
 
 header nav ul li a {
+  background-color: #a1f5ce66;
+  padding: 10px;
+  margin: 2px;
   color: black;
   text-decoration: none;
 }
@@ -48,3 +51,21 @@ footer {
   text-align: center;
   padding: 10px;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: auto;
+  margin: 20px;
+  padding: 20px;
+}
+
+.container img{
+  order: 2;
+}
+.container p{
+  order: 1;
+}
+
+
