@@ -152,6 +152,7 @@ operacao.addEventListener('change', (event)=>{
     inputValor.disabled = false;
 });
 
+//FINALIZADO
 
 
 
