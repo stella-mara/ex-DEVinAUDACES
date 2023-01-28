@@ -16,23 +16,58 @@
       <ul>
         <li><a href="./banco.html">Home</a></li>
         <li><a  id="conta" href="./conta.html">Conta</a></li>
-        <li><a id="saldo" href="./saldo.html">Consulta de Saldo</a></li>
-        <li><a id="saque" href="./saque.html">Saque</a></li>
-        <li><a id="deposito" href="./deposito.html">Depósito</a></li>
+        <li><a id="saldo" href="#">Consulta de Saldo</a></li>
+        <li><a id="saque" href="#">Saque</a></li>
+        <li><a id="deposito" href="#">Depósito</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <p>Preencha o formulário aqui.</p>
-    <div id="formulario">
-      <p>Nome: <input type="text" placeholder="Digite seu nome"></p>
-      <p>CPF: <input type="number" placeholder="Digite seu CPF"></p>
-      <p>Celular: <input type="number" placeholder="Digite seu celular"></p>
-      <p>Senha: <input type="text"> </p>
-      <p>Confirme sua senha: <input type="text"> </p>
-      <button>Enviar Formulário</button>
-      <button>Limpar Formulário</button>
-    </div>
+
+      <form id="form-cadastro">
+       
+          <label for="nome"> Nome: </label>
+            <input required id="nome" type="text" placeholder="Digite seu nome">
+        
+          <label for="cpf"> CPF: </label>
+            <input required id="cpf" type="text" placeholder="Digite seu CPF">
+      
+          <label for="celular"> Celular: </label>
+            <input required id="celular" type="text" placeholder="Digite seu celular">
+      
+          <label for="senha"> Senha: </label>
+            <input required id="senha" type="password">
+      
+          <label for="confirmaçaoSenha"> Confirme sua senha: </label>
+            <input id="confirmaçaoSenha" required type="password">
+
+        <button type="reset" >Limpar Formulário</button>
+        <button type="submit" >Enviar Formulário</button>
+        
+      </form>
+<br/><br/>
+      <p>Realize sua operação aqui.</p>
+
+    <form id="form-operacao">
+      <label for="conta">Conta:</label>
+        <input required type="number" placeholder="Digite o número da sua conta">
+      <!--TIPO DE OPERAÇÃO-->
+      <label for="operacao">Operação:</label>
+        <select required id="operacao">
+          <option value="saque">Saque</option>
+          <option value="deposito">Depósito</option>
+          <option value="saldo">Saldo</option>
+        </select>
+      <label for="valor">Valor:</label>
+        <input required id="valor" type="number" placeholder="Digite o valor">
+      <label for="senhaOperaçao">Senha:</label>
+        <input id="senhaOperaçao" required type="password" placeholder="Digite sua senha">
+
+      <button type="reset">Limpar</button>
+      <button type="submit">Confirmar</button>
+  </form>
+
   </main>
 
   <footer>
