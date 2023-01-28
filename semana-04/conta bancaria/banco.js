@@ -11,15 +11,15 @@ let contas = [
 ];
 
 // FORMULÁRIO CONTA
-const formCadastro = document.getElementById('form-cadastro');
+const formulario = document.getElementById('form-cadastro');
 const enviarFormulario = (event) => {
   event.preventDefault();
 
 // OBTER OS CAMPOS DE SENHA
 const senha = event.target.senha.value
-const confirmaçaoSenha = event.target.confirmaçaoSenha.value
+const confirmacaoSenha = event.target.confirmacaoSenha.value
 
-if(senha !== confirmaçaoSenha) {
+if(senha !== confirmacaoSenha) {
   alert('As senhas são divergentes. Tente novamente.');
   return;
 }
@@ -43,7 +43,7 @@ contas.push(contaCriada);
 alert(`Conta criada com sucesso. Número: ${conta}`)
 };
 
-formCadastro.addEventListener('submit', enviarFormulario)
+formulario.addEventListener('submit', enviarFormulario)
 
 //OPERAÇÕES
 //OBTER FORMULÁRIO DE OPERAÇÕES
@@ -52,21 +52,22 @@ const formOperacao = document.getElementById('form-operacao')
 
 //FUNÇÃO DE SAQUE
 
-const sacar = (conta, valor)=> {
+const sacar = (conta, valor) => {
   //Verifica se o valor é maior que 0
-  if(valor > 0){
+  if (valor > 0) {
     //Verifica se tem saldo disponível
-    if(conta.saldo >= valor){
-      const novoSaldo = conta.saldo - valor
-      conta.saldo = novoSaldo
+    if (conta.saldo >= valor) {
+      const novoSaldo = conta.saldo - valor;
+      conta.saldo = novoSaldo;
   
       alert(`Saque efetuado com sucesso! Novo saldo: R$ ${novoSaldo}`)
       return;
     }
 
     alert('Saldo insuficiente.')
+    return;
   }
-    alert('Saldo insuficiente.')
+    alert('Não foi possível efetuar o saque.')
 };
 
 //FUNÇÃO DE DEPÓSITO
@@ -91,16 +92,16 @@ const consultarSaldo = (conta)=> {
 
 //ENVIAR FORMULARIO DE OPERAÇÃO
 const enviarFormularioOperacao = (event)=> {
-  event.preventDefault()
+  event.preventDefault();
 
   //Obter valores digitados no formulário
   const conta = parseInt(event.target.conta.value);
   const operacao = event.target.operacao.value;
   const valor = parseFloat(event.target.valor.value);
-  const senha = event.target.senhaOperaçao.value;
+  const senha = event.target.senhaOperacao.value;
 
   //Validar conta e senha
-  const contaAtual = contas.find((c)=> c.conta === conta)
+  const contaAtual = contas.find((c)=> c.conta === conta);
   if(!contaAtual) {
     alert('Conta inválida!');
     return;
@@ -116,10 +117,10 @@ const enviarFormularioOperacao = (event)=> {
 
   switch (operacao) {
     case 'saque':
-      sacar(contaAtual, valor)
+      sacar(contaAtual, valor);
       break;
     case 'deposito':
-      depositar(contaAtual, valor)
+      depositar(contaAtual, valor);
       break;
     case 'saldo':
       consultarSaldo(contaAtual);
@@ -130,19 +131,21 @@ const enviarFormularioOperacao = (event)=> {
   }
 };
 //Vinculando função ao evento de submit do form operação
-formOperacao.addEventListener('submit', enviarFormularioOperacao)
+formOperacao.addEventListener('submit', enviarFormularioOperacao);
 
 //Desabilitar/Habilitar campo de valor
 
 //Obter select para adicionar evento de onchange
 
-const operacao = document.getElementById('operacao')
+const operacao = document.getElementById('operacao');
 operacao.addEventListener('change', (event)=>{
   //Obter o campo de valor do HTML
   const inputValor = document.getElementById('valor')
-
+  //Veriica se o valor selecionado é saldo
   if(event.target.value === 'saldo'){
+    //Desabilitar o campo
     inputValor.disabled = true;
+    //Limpa o valor digitado
     inputValor.value = '';
     return;
   }

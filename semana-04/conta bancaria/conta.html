@@ -15,7 +15,7 @@
     <nav>
       <ul>
         <li><a href="./banco.html">Home</a></li>
-        <li><a  id="conta" href="./conta.html">Conta</a></li>
+        <li><a href="./conta.html">Conta</a></li>
         <li><a id="saldo" href="#">Consulta de Saldo</a></li>
         <li><a id="saque" href="#">Saque</a></li>
         <li><a id="deposito" href="#">Depósito</a></li>
@@ -39,8 +39,8 @@
           <label for="senha"> Senha: </label>
             <input required id="senha" type="password">
       
-          <label for="confirmaçaoSenha"> Confirme sua senha: </label>
-            <input id="confirmaçaoSenha" required type="password">
+          <label for="confirmaçcaoSenha"> Confirme sua senha: </label>
+            <input id="confirmacaoSenha" required type="password">
 
         <button type="reset" >Limpar Formulário</button>
         <button type="submit" >Enviar Formulário</button>
@@ -51,7 +51,7 @@
 
     <form id="form-operacao">
       <label for="conta">Conta:</label>
-        <input required type="number" placeholder="Digite o número da sua conta">
+        <input id="conta" required type="number" placeholder="Digite o número da sua conta">
       <!--TIPO DE OPERAÇÃO-->
       <label for="operacao">Operação:</label>
         <select required id="operacao">
@@ -62,7 +62,7 @@
       <label for="valor">Valor:</label>
         <input required id="valor" type="number" placeholder="Digite o valor">
       <label for="senhaOperaçao">Senha:</label>
-        <input id="senhaOperaçao" required type="password" placeholder="Digite sua senha">
+        <input id="senhaOperacao" required type="password" placeholder="Digite sua senha">
 
       <button type="reset">Limpar</button>
       <button type="submit">Confirmar</button>
